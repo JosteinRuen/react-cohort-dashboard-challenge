@@ -31,8 +31,8 @@ function NewPostForm() {
       if (response.ok) {
         const createdPost = await response.json()
         setPosts((prevPosts) => [createdPost, ...prevPosts])
-        setTitle("");
-        setContent("");
+        setTitle("")
+        setContent("")
       } else {
         console.error('Error creating post:', response.statusText)
       }

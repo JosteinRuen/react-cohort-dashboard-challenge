@@ -49,7 +49,7 @@ function CommentList({ postId }) {
       )}
       <NewCommentForm postId={postId} />
     </div>
-  );
+  )
 }
 
 export default CommentList;

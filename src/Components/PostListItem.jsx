@@ -11,7 +11,7 @@ function PostListItem({ post }) {
   const { friendList } = useContext(AppContext);
 
   if (!friendList) {
-    return null;
+    return null
   }
 
   const postAuthor = friendList.find(friend => friend.id === post.contactId);
@@ -32,7 +32,7 @@ function PostListItem({ post }) {
       </div>
       <CommentList postId={post.id} />
     </div>
-  );
+  )
 }
 
 export default PostListItem;

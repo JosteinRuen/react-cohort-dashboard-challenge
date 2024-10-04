@@ -37,7 +37,7 @@ function App() {
         const postsWithComments = data.map(post => ({ ...post, comments: post.comments || [] }));
         setPosts(postsWithComments);
       } catch (error) {
-        console.error('Error fetching posts:', error);
+        console.error('Error fetching posts:', error)
       }
     };
 
@@ -49,10 +49,10 @@ function App() {
     const fetchFriendList = async () => {
       try {
         const response = await fetch('https://boolean-uk-api-server.fly.dev/josteinruen/contact');
-        const data = await response.json();
+        const data = await response.json()
         setFriendList(data);
       } catch (error) {
-        console.error('Error fetching friend list:', error);
+        console.error('Error fetching friend list:', error)
       }
     };
 

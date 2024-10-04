@@ -35,12 +35,12 @@ function NewCommentForm({ postId }) {
               : post
           )
         );
-        setContent("");
+        setContent("")
       } else {
-        console.error('Error creating comment:', response.statusText);
+        console.error('Error creating comment:', response.statusText)
       }
     } catch (error) {
-      console.error('Error creating comment:', error);
+      console.error('Error creating comment:', error)
     }
   };
 
@@ -55,7 +55,7 @@ function NewCommentForm({ postId }) {
       </div>
       <button type="submit">Add Comment</button>
     </form>
-  );
+  )
 }
 
 export default NewCommentForm;
