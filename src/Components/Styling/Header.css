@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #f8f9fa;
+    background-color: #000046;
     border-bottom: 1px solid #dee2e6;
   }
   
@@ -14,6 +14,11 @@
   
   .header-icon {
     height: 40px;
+  }
+  
+  .header-title {
+    color: white; /* Set text color to white */
+    margin-left: 0.5rem;
   }
   
   .header-right {

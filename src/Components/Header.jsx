@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../App";
 import titleHeaderIcon from "../assets/title-header.svg";
 import profileIcon from "../assets/profile-icon.svg";
-import "./Header.css";
+import "./Styling/Header.css";
 
 function getInitials(firstName, lastName) {
     return `${firstName[0]}${lastName[0]}`.toUpperCase();
