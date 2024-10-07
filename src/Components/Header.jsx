@@ -15,7 +15,7 @@ export default function Header() {
     <header className="header">
       <div className="header-left">
         <img src={titleHeaderIcon} alt="Title Header Icon" className="header-icon" />
-        <h1 className="header-title">Cohort Manager</h1>
+        <h1 className="header-title"></h1>
       </div>
       <div className="header-right">
         {user ? (

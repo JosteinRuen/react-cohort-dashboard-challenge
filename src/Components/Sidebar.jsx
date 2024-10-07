@@ -6,7 +6,7 @@ import "./Styling/Sidebar.css";
 function Sidebar() {
   return (
     <nav className="sidebar">
-      Sidebar Element
+      
       <ul>
         <li>
           <Link to="/" className="sidebar-link">

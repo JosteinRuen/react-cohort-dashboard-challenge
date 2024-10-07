@@ -2,8 +2,12 @@ import { useState, useContext } from "react";
 import { AppContext } from "../App";
 import "./Styling/NewCommentForm.css";
 
-function NewCommentForm({ postId }) {
-  const { user, setPosts } = useContext(AppContext);
+function getInitials(firstName, lastName) {
+  return `${firstName[0]}${lastName[0]}`.toUpperCase();
+}
+
+function NewCommentForm({ postId, onNewComment }) {
+  const { user } = useContext(AppContext);
   const [content, setContent] = useState("");
 
   const handleSubmit = async (e) => {
@@ -28,34 +32,29 @@ function NewCommentForm({ postId }) {
 
       if (response.ok) {
         const createdComment = await response.json();
-        setPosts((prevPosts) =>
-          prevPosts.map((post) =>
-            post.id === postId
-              ? { ...post, comments: [createdComment, ...post.comments] }
-              : post
-          )
-        );
-        setContent("")
+        onNewComment(createdComment);
+        setContent("");
       } else {
-        console.error('Error creating comment:', response.statusText)
+        console.error('Error creating comment:', response.statusText);
       }
     } catch (error) {
-      console.error('Error creating comment:', error)
+      console.error('Error creating comment:', error);
     }
   };
 
+  const initials = getInitials(user.firstName, user.lastName);
+
   return (
     <form className="new-comment-form" onSubmit={handleSubmit}>
-      <div>
-        <label>Comment</label>
+      <div className="user-initials">{initials}</div>
+        <label></label>
         <textarea
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
-      </div>
       <button type="submit">Add Comment</button>
     </form>
-  )
+  );
 }
 
 export default NewCommentForm;
